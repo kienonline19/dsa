@@ -7,7 +7,8 @@ def add_text(data):
     txt_output.insert("1.0", data)
 
 
-def encode_ceasar_cipher(key):
+def encode_ceasar_cipher():
+    key = k.get()
     string = txt_inp.get("1.0", "end-1c")
 
     ans = []
@@ -23,8 +24,7 @@ def encode_ceasar_cipher(key):
     add_text(''.join(ans))
 
 
-def decode_ceasar_cipher():
-    key = k.get()
+def decode_ceasar_cipher(key):
     string = txt_inp.get("1.0", "end-1c")
 
     ans = []
@@ -39,6 +39,10 @@ def decode_ceasar_cipher():
 
 
     add_text(''.join(ans))
+
+
+def brute_force():
+    ...
 
 
 root = tk.Tk()
@@ -67,6 +71,7 @@ button_frame.pack(pady = 10)
 
 ttk.Button(button_frame, text = "Encode", command = encode_ceasar_cipher).pack(side = tk.LEFT, padx = 5)
 ttk.Button(button_frame, text = "Decode", command = lambda: decode_ceasar_cipher(k.get())).pack(side = tk.LEFT, padx = 5)
+ttk.Button(button_frame, text = "Brute Force", command = brute_force).pack(side = tk.LEFT, padx = 5)
 
 txt_output = tk.Text(root, width=40, height=5)
 txt_output.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
