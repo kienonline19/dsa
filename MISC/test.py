@@ -51,8 +51,6 @@ def decode_ceasar_cipher(key):
         msg.showerror("Error", str(e))
 
 
-
-
 def brute_force():
     top = tk.Toplevel(root)
     top.title("Crack Ceasar Cipher")
@@ -86,18 +84,21 @@ root.geometry(f"600x400+{x}+{y}")
 lbl_inp_frame = tk.LabelFrame(root, text="Input")
 lbl_inp_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-txt_inp = tk.Text(lbl_inp_frame, width = 40, height = 5, font=FONT_FAMILY)
-txt_inp.pack(fill = tk.BOTH, expand = True, padx = 5, pady=5)
+txt_inp = tk.Text(lbl_inp_frame, width=40, height=5, font=FONT_FAMILY)
+txt_inp.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-key_spb = ttk.Spinbox(root, from_ = 1, to = 25)
+key_spb = ttk.Spinbox(root, from_=1, to=25)
 key_spb.pack(pady=5)
 
 button_frame = tk.Frame(root)
-button_frame.pack(pady = 10)
+button_frame.pack(pady=10)
 
-ttk.Button(button_frame, text = "Encode", command = encode_ceasar_cipher).pack(side = tk.LEFT, padx = 5)
-ttk.Button(button_frame, text = "Decode", command = lambda: decode_ceasar_cipher(key_spb.get())).pack(side = tk.LEFT, padx = 5)
-ttk.Button(button_frame, text = "Brute Force", command = brute_force).pack(side = tk.LEFT, padx = 5)
+ttk.Button(button_frame, text="Encode",
+           command=encode_ceasar_cipher).pack(side=tk.LEFT, padx=5)
+ttk.Button(button_frame, text="Decode", command=lambda: decode_ceasar_cipher(
+    key_spb.get())).pack(side=tk.LEFT, padx=5)
+ttk.Button(button_frame, text="Brute Force",
+           command=brute_force).pack(side=tk.LEFT, padx=5)
 
 lbl_out_frame = tk.LabelFrame(root, text="Output")
 lbl_out_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
