@@ -71,6 +71,8 @@ def brute_force():
 
 root = tk.Tk()
 
+root.title("Ceasar Cipher")
+
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
@@ -87,8 +89,10 @@ lbl_inp_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 txt_inp = tk.Text(lbl_inp_frame, width=40, height=5, font=FONT_FAMILY)
 txt_inp.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-key_spb = ttk.Spinbox(root, from_=1, to=25)
-key_spb.pack(pady=5)
+lbl_key_frame = tk.LabelFrame(root, text="Key")
+lbl_key_frame.pack()
+key_spb = ttk.Spinbox(lbl_key_frame, from_=1, to=25)
+key_spb.pack(padx=5, pady=5)
 
 button_frame = tk.Frame(root)
 button_frame.pack(pady=10)
