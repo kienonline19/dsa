@@ -45,12 +45,15 @@ def brute_force():
     top.title("Crack Ceasar Cipher")
     top.geometry("600x600")
 
-    lst = tk.Listbox(top)
-    lst.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+    txt_bf = tk.Text(top)
+    txt_bf.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-    for key in range(26):
-        result = decode_ceasar_cipher(key)
-        lst.insert(tk.END, result)
+    decs = [
+        decode_ceasar_cipher(key)
+        for key in range(26)
+    ]
+
+    txt_bf.insert("1.0", '\n'.join(decs))
 
     top.mainloop()
 
