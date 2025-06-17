@@ -42,7 +42,11 @@ def decode_ceasar_cipher(key):
 
 
 def brute_force():
-    ...
+    top = tk.Toplevel(root)
+    top.title("Crack Ceasar Cipher")
+    top.geometry("300x300")
+
+    top.mainloop()
 
 
 root = tk.Tk()
