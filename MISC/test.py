@@ -37,17 +37,19 @@ def decode_ceasar_cipher(key):
         else:
             ans.append(ch)
 
-
-    add_text(''.join(ans))
+    return ''.join(ans)
 
 
 def brute_force():
     top = tk.Toplevel(root)
     top.title("Crack Ceasar Cipher")
-    top.geometry("300x300")
+    top.geometry("600x600")
 
     lst = tk.Listbox(top)
     lst.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+
+    for key in range(26):
+        ...
 
     top.mainloop()
 
@@ -77,7 +79,7 @@ button_frame = tk.Frame(root)
 button_frame.pack(pady = 10)
 
 ttk.Button(button_frame, text = "Encode", command = encode_ceasar_cipher).pack(side = tk.LEFT, padx = 5)
-ttk.Button(button_frame, text = "Decode", command = lambda: decode_ceasar_cipher(k.get())).pack(side = tk.LEFT, padx = 5)
+ttk.Button(button_frame, text = "Decode", command = lambda: add_text(decode_ceasar_cipher(k.get()))).pack(side = tk.LEFT, padx = 5)
 ttk.Button(button_frame, text = "Brute Force", command = brute_force).pack(side = tk.LEFT, padx = 5)
 
 txt_output = tk.Text(root, width=40, height=5)
