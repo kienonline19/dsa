@@ -46,6 +46,9 @@ def brute_force():
     top.title("Crack Ceasar Cipher")
     top.geometry("300x300")
 
+    lst = tk.Listbox(top)
+    lst.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+
     top.mainloop()
 
 
