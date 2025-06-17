@@ -72,10 +72,11 @@ x = (screen_width - window_width) // 2
 y = (screen_height - window_height) // 2
 root.geometry(f"600x400+{x}+{y}")
 
-tk.Label(root, text = "Input string:").pack()
+lbl_inp_frame = tk.LabelFrame(root, text="Input")
+lbl_inp_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
-txt_inp = tk.Text(root, width = 40, height = 5, font=FONT_FAMILY)
-txt_inp.pack(fill = tk.BOTH, expand = True, padx = 10)
+txt_inp = tk.Text(lbl_inp_frame, width = 40, height = 5, font=FONT_FAMILY)
+txt_inp.pack(fill = tk.BOTH, expand = True, padx = 5, pady=5)
 
 k = tk.IntVar()
 
@@ -88,7 +89,9 @@ ttk.Button(button_frame, text = "Encode", command = encode_ceasar_cipher).pack(s
 ttk.Button(button_frame, text = "Decode", command = lambda: add_text(decode_ceasar_cipher(k.get()))).pack(side = tk.LEFT, padx = 5)
 ttk.Button(button_frame, text = "Brute Force", command = brute_force).pack(side = tk.LEFT, padx = 5)
 
-txt_output = tk.Text(root, width=40, height=5, font=FONT_FAMILY)
-txt_output.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
+lbl_out_frame = tk.LabelFrame(root, text="Output")
+lbl_out_frame.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
+txt_output = tk.Text(lbl_out_frame, width=40, height=5, font=FONT_FAMILY)
+txt_output.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
 root.mainloop()
