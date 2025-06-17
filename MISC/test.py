@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 
+FONT_FAMILY = ("Helvetica", 12)
+
 
 def add_text(data):
     txt_output.delete("1.0", tk.END)
@@ -45,7 +47,7 @@ def brute_force():
     top.title("Crack Ceasar Cipher")
     top.geometry("600x600")
 
-    txt_bf = tk.Text(top)
+    txt_bf = tk.Text(top, font=FONT_FAMILY)
     txt_bf.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
     decs = [
@@ -72,7 +74,7 @@ root.geometry(f"600x400+{x}+{y}")
 
 tk.Label(root, text = "Input string:").pack()
 
-txt_inp = tk.Text(root, width = 40, height = 5)
+txt_inp = tk.Text(root, width = 40, height = 5, font=FONT_FAMILY)
 txt_inp.pack(fill = tk.BOTH, expand = True, padx = 10)
 
 k = tk.IntVar()
@@ -86,7 +88,7 @@ ttk.Button(button_frame, text = "Encode", command = encode_ceasar_cipher).pack(s
 ttk.Button(button_frame, text = "Decode", command = lambda: add_text(decode_ceasar_cipher(k.get()))).pack(side = tk.LEFT, padx = 5)
 ttk.Button(button_frame, text = "Brute Force", command = brute_force).pack(side = tk.LEFT, padx = 5)
 
-txt_output = tk.Text(root, width=40, height=5)
+txt_output = tk.Text(root, width=40, height=5, font=FONT_FAMILY)
 txt_output.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
 
 root.mainloop()
