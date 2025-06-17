@@ -49,7 +49,8 @@ def brute_force():
     lst.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
     for key in range(26):
-        ...
+        result = decode_ceasar_cipher(key)
+        lst.insert(tk.END, result)
 
     top.mainloop()
 
