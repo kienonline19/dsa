@@ -60,7 +60,7 @@ def brute_force():
     txt_bf.pack(fill=tk.BOTH, expand=True, padx=5, pady=5)
 
     decs = [
-        decode_ceasar_cipher(key)
+        f"Key {key:02d} => " + decode_ceasar_cipher(key)
         for key in range(26)
     ]
 
