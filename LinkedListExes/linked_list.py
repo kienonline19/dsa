@@ -83,6 +83,20 @@ class LinkedList:
                 prev = current
             current = current.next
 
+    def nth(self, n):
+        """
+        1 3 2 4 5
+        0 1 2 3 4
+        len = 5
+        n = 2 => 4
+        """
+        cur = self.head
+
+        for _ in range(self.length - n):
+            cur = cur.next
+
+        return cur
+
 
 if __name__ == "__main__":
     custom_ll = LinkedList()
@@ -100,3 +114,5 @@ if __name__ == "__main__":
 
     print(custom_ll)
     print(len(custom_ll))
+
+    print(custom_ll.nth(4))

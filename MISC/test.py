@@ -1,6 +1,11 @@
 import tkinter as tk
 
 
+def add_text(data):
+    txt_output.delete("1.0", tk.END)
+    txt_output.insert("1.0", data)
+
+
 def encode_ceasar_cipher():
     key = k.get()
     string = txt_inp.get("1.0", "end-1c")
@@ -15,7 +20,7 @@ def encode_ceasar_cipher():
         else:
             ans.append(ch)
 
-    lbl_enc.config(text = ''.join(ans))
+    add_text(''.join(ans))
 
 
 def decode_ceasar_cipher():
@@ -32,7 +37,8 @@ def decode_ceasar_cipher():
         else:
             ans.append(ch)
 
-    lbl_dec.config(text = ''.join(ans))
+
+    add_text(''.join(ans))
 
 
 root = tk.Tk()
@@ -54,7 +60,7 @@ txt_inp.pack(fill = tk.BOTH, expand = True, padx = 10)
 
 k = tk.IntVar()
 
-tk.Spinbox(root, from_ = 1, to = 25, textvariable = k).pack()
+tk.Spinbox(root, from_ = 1, to = 25, textvariable = k).pack(pady=5)
 
 button_frame = tk.Frame(root)
 button_frame.pack(pady = 10)
@@ -62,9 +68,7 @@ button_frame.pack(pady = 10)
 tk.Button(button_frame, text = "Encode", command = encode_ceasar_cipher).pack(side = tk.LEFT, padx = 5)
 tk.Button(button_frame, text = "Decode", command = decode_ceasar_cipher).pack(side = tk.LEFT, padx = 5)
 
-lbl_enc = tk.Label(root)
-lbl_enc.pack()
-lbl_dec = tk.Label(root)
-lbl_dec.pack()
+txt_output = tk.Text(root, width=40, height=5)
+txt_output.pack(fill=tk.BOTH, expand=True, padx=10, pady=5)
 
 root.mainloop()
