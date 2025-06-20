@@ -72,6 +72,7 @@ def brute_force():
 root = tk.Tk()
 
 root.title("Ceasar Cipher")
+root.iconbitmap("cipher.ico")
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()

@@ -83,6 +83,20 @@ class LinkedList:
                 prev = current
             current = current.next
 
+    def nth_to_last(self, n):
+        p1 = p2 = self.head
+
+        for _ in range(n):
+            if p2 is None:
+                return
+            p2 = p2.next
+
+        while p2:
+            p1 = p1.next
+            p2 = p2.next
+
+        return p1
+
     def nth(self, n):
         """
         1 3 2 4 5
@@ -115,4 +129,4 @@ if __name__ == "__main__":
     print(custom_ll)
     print(len(custom_ll))
 
-    print(custom_ll.nth(4))
+    print(custom_ll.nth_to_last(4))
